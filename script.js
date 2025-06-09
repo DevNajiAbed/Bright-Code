@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       const data = await response.json();
       if (response.ok) {
-        alert('تم استلام طلب الاشتراك بنجاح!');
+        alert('تم استلام طلب الاشتراك بنجاح!\nانتظر رسالتنا على واتس أب.');
         subscriptionForm.reset();
       } else {
         alert('خطأ في الإرسال: ' + data.error);
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       const data = await response.json();
       if (response.ok) {
-        alert('تم استلام رسالتك، شكرًا لتواصلك معنا!');
+        alert('تم استلام رسالتك، شكرًا لتواصلك معنا!\nانتظر رسالتنا على واتس أب.');
         contactForm.reset();
       } else {
         alert('خطأ في الإرسال: ' + data.error);
