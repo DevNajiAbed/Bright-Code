@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function updateButtonVisibility() {
+  console.log('updateButtonVisibility')
   const anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
   subscribeSection.style.display = anyChecked ? 'block' : 'none';
 }
@@ -42,6 +43,7 @@ function updateButtonVisibility() {
 checkboxes.forEach(checkbox => {
   checkbox.addEventListener('change', updateButtonVisibility);
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.testimonial-card');
@@ -79,6 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
         checkbox.addEventListener('change', () => {
           const anyChecked = grid.querySelectorAll('input[type="checkbox"]:checked').length > 0;
           subscribeSection.style.display = anyChecked ? 'block' : 'none';
+
+          if (checkbox.checked) {
+            subscribeSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
         });
       });
     })
