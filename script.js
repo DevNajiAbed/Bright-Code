@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="icon">${course.icon || '🎓'}</div>
             <h3>${course.title}</h3>
             <p>${course.description}</p>
-            <div class="price">السعر: ${course.price} شيكل</div>
           `;
         grid.appendChild(label);
       });
