@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسحيل اشتراك</title>
+    <link rel="stylesheet" href="style/enroll.css">
+    <link rel="icon" href="images/website-icon.png" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <span><span>Bright</span> Code</span>
+                    <img src="images/logo.png" alt="Bright Code Logo" />
+                </a>
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    ☰
+                </button>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="index.html#why-us">لماذا نحن</a></li>
+                        <li><a href="index.html#achievements">انجازات الشركة</a></li>
+                        <li><a href="index.html#testimonials">آراء الخريجين</a></li>
+                        <li><a href="index.html#enroll">طريقة التسجيل</a></li>
+                        <li><a href="index.html#enroll">تواصل معنا</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="enroll">
+        <div id="loading" class="loading-spinner"></div>
+        <div class="enroll-content">
+            <h1 style="margin-bottom: 20px; color: #0F2C43; font-size: xx-large;">إرسال بيانات اشتراك</h1>
+            <div class="course-card"></div>
+            <div class="enroll-form">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="enrollName">الاسم الكامل</label>
+                        <input type="text" id="enrollName" name="enrollName" placeholder="اكتب اسمك الكامل" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="enrollAddress">العنوان -اختياري-</label>
+                        <input type="text" id="enrollAddress" name="enrollAddress" placeholder="اكتب عنوانك" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="enrollEmail">البريد الإلكتروني -اختياري-</label>
+                        <input type="email" id="enrollEmail" name="enrollEmail" placeholder="your_name@gmail.com" />
+                    </div>
+
+                    <div class="form-group whatsapp-group">
+                        <label for="enrollWhatsApp">رقم واتس أب</label>
+                        <div class="whatsapp-inputs">
+                            <input type="tel" id="enrollWhatsApp" name="enrollWhatsApp" placeholder="5XXXXXXXX" required
+                                class="whatsapp-number" />
+                            <select id="countryCode" name="countryCode" required class="whatsapp-code">
+                                <option value="+970">🇵🇸 +970</option>
+                                <option value="+972">🇮🇱 +972</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn-submit">إرسال</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> برايت كود، جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="script/enroll.js"></script>
+</body>
+
+</html>

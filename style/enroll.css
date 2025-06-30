@@ -1,0 +1,158 @@
+@import url('courses.css');
+
+.enroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.enroll .course-card {
+    width: 50%;
+}
+
+.enroll .course-card a {
+    margin-top: 20px;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    .enroll .course-card {
+        width: 100%;
+    }
+}
+
+@media (min-width: 500px) {
+    .enroll .course-card img {
+        width: 300px;
+    }
+}
+
+.enroll-form {
+    width: 50%;
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 2rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 500px) {
+    .enroll-form {
+        width: 100%;
+    }
+}
+
+.enroll-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.enroll-form label {
+    display: block;
+    font-size: 1rem;
+    color: #0F2C43;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.enroll-form input,
+.enroll-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.enroll-form input:focus,
+.enroll-form textarea:focus {
+    border-color: #0F2C43;
+}
+
+.enroll-form textarea {
+    resize: vertical;
+}
+
+.enroll-form .btn-submit {
+    width: 100%;
+    background-color: #0F2C43;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.enroll-form .btn-submit:hover {
+    background-color: #062235;
+}
+
+@media (max-width: 768px) {
+    .enroll {
+        padding: 3rem 1rem;
+    }
+
+    .enroll .section-title {
+        font-size: 1.8rem;
+    }
+
+    .enroll-form {
+        padding: 1.5rem 1rem;
+    }
+
+    .info-icon {
+        font-size: 1.75rem;
+    }
+}
+
+.whatsapp-group .whatsapp-inputs {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.whatsapp-code {
+    flex: 0 0 10%;
+    padding: 0.75rem 0.5rem;
+    border: 1px solid #FFC300;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #FFC300;
+    font-weight: 500;
+    font-size: large;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.whatsapp-code:focus {
+    outline: none;
+    border-color: #FFC300;
+    background-color: #fff;
+}
+
+.whatsapp-number {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.whatsapp-number:focus {
+    outline: none;
+    border-color: #FFC300;
+}
+
+.enroll-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

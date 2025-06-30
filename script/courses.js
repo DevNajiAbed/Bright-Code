@@ -31,14 +31,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Fetching Categories
+// Fetching Categories with their Courses
 document.addEventListener('DOMContentLoaded', function () {
     const loader = document.getElementById('loading');
     const coursesContainer = document.querySelector('.container.courses')
     coursesContainer.style.display = 'none'
     loader.style.display = 'block';
 
-    fetch('http://localhost:3131/categories')
+    fetch('https://brtcodeapi.com/categories')
         .then(res => res.json())
         .then(categories => {
             for (let i = 0; i < categories.length; i++) {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const categoryDiv = document.createElement('div');
                 categoryDiv.classList.add('category')
 
-                fetch(`http://localhost:3131/courses/by-category-id/${category._id}`)
+                fetch(`https://brtcodeapi.com/courses/by-category-id/${category._id}`)
                     .then(res => res.json())
                     .then(courses => {
                         var content = `
