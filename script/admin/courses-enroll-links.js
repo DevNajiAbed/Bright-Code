@@ -95,9 +95,12 @@ document.addEventListener('DOMContentLoaded', async function () {
                             categoryDiv.appendChild(categoryContent)
                         })
                         coursesContainer.appendChild(categoryDiv)
+
+                        if (i === courses.length - 1) {
+                            coursesContainer.style.display = 'block'
+                            loader.style.display = 'none';
+                        }
                     })
-                coursesContainer.style.display = 'block'
-                loader.style.display = 'none';
 
                 document.querySelectorAll('.category-header').forEach(btn => {
                     btn.addEventListener('click', () => {
