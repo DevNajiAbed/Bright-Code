@@ -5,4 +5,5 @@
     font-size: large;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     cursor: pointer;
+    border-color: transparent;
 }
