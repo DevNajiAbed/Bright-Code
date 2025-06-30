@@ -1,11 +1,8 @@
 @import url(../courses.css);
 
-.course-card .btn-primary {
+.course-card .btn-primary.btn-copy {
     margin-top: 20px;
     font-size: large;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.course-card .btn-copy {
     cursor: pointer;
 }
