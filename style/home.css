@@ -141,6 +141,7 @@ nav li a:hover {
   padding: 0.45rem 1rem;
   border-radius: 4px;
   transition: background-color 0.2s ease, color 0.2s ease;
+  border-color: transparent;
 }
 
 .btn-primary:hover {

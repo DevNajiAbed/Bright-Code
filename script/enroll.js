@@ -1,5 +1,36 @@
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
+document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('header nav');
+    const links = document.querySelectorAll('.nav-links a');
+    const logo = document.querySelector('.header-inner .logo')
+
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+    });
+
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav.classList.contains('open')) {
+                nav.classList.remove('open');
+            }
+        });
+    });
+
+    logo.addEventListener('click', () => {
+        if (nav.classList.contains('open')) {
+            nav.classList.remove('open');
+        }
+    })
+
+    document.querySelectorAll('.category-header').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.parentElement.classList.toggle('open');
+        });
+    });
+});
+
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const courseId = params.get('course_id')

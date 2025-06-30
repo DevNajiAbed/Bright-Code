@@ -1,5 +1,3 @@
-document.getElementById('current-year').textContent = new Date().getFullYear();
-
 document.addEventListener('DOMContentLoaded', function () {
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('header nav');
@@ -48,33 +46,54 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                 await fetch(`https://brtcodeapi.com/courses/by-category-id/${category._id}`)
                     .then(res => res.json())
-                    .then(courses => {
-                        var content = `
+                    .then((courses) => {
+                        const categoryBtn = document.createElement('button')
+                        categoryBtn.classList.add('category-header')
+                        categoryBtn.innerHTML = `
                             <button class="category-header">
                                 <span>${category.name}</span>
                                 <span class="arrow">▶</span>
                             </button>
                         `
+                        categoryDiv.appendChild(categoryBtn)
                         courses.forEach(course => {
-                            const phone = '972593617179';
-                            const message = encodeURIComponent(`مرحباً، أود التسجيل في دورة ${course.title}!`);
-                            const url = `https://wa.me/${phone}?text=${message}`;
+                            const categoryContent = document.createElement('div')
+                            categoryContent.classList.add('category-content')
 
-                            content += `
-                                <div class="category-content">
-                                    <div class="course-card">
-                                        <img src="images/${category.imageRef}" alt="${course.title}">
-                                        <h3>${course.title}</h3>
-                                        <p>${course.description}</p>
-                                        <a href="${url}" target="_blank" class="btn-primary">
-                                            تواصل معنا على واتساب
-                                        </a>
-                                    </div>
-                                </div>
+                            const courseCard = document.createElement('div')
+                            courseCard.classList.add('course-card')
+                            courseCard.innerHTML = `
+                                <img src="../images/${category.imageRef}" alt="${course.title}">
+                                <h3>${course.title}</h3>
+                                <p>${course.description}</p>
                             `
+                            const copyBtn = document.createElement('button')
+                            copyBtn.classList.add('btn-primary')
+                            copyBtn.classList.add('btn-copy')
+                            copyBtn.textContent = 'نسخ رابط التسجيل'
+                            copyBtn.addEventListener('click', async () => {
+                                const registrationLink = `https://www.brtcode.com/enroll.html?course_id=${course._id}`
+                                try {
+                                    await navigator.clipboard.writeText(registrationLink);
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'تم النسخ!',
+                                        text: 'رابط التسجيل تم نسخه إلى الحافظة.',
+                                        timer: 1500,
+                                        showConfirmButton: false
+                                    });
+                                } catch (err) {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'خطأ',
+                                        text: 'لم نتمكن من نسخ الرابط. حاول مرة أخرى.'
+                                    });
+                                }
+                            })
+                            courseCard.appendChild(copyBtn)
+                            categoryContent.appendChild(courseCard)
+                            categoryDiv.appendChild(categoryContent)
                         })
-
-                        categoryDiv.innerHTML = content
                         coursesContainer.appendChild(categoryDiv)
                     })
                 coursesContainer.style.display = 'block'
