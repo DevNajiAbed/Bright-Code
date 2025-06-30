@@ -80,14 +80,14 @@ document.addEventListener('DOMContentLoaded', async function () {
                         if (i === courses.length - 1) {
                             coursesContainer.style.display = 'block'
                             loader.style.display = 'none';
+
+                            document.querySelectorAll('.category-header').forEach(btn => {
+                                btn.addEventListener('click', () => {
+                                    btn.parentElement.classList.toggle('open');
+                                });
+                            });
                         }
                     })
-
-                document.querySelectorAll('.category-header').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        btn.parentElement.classList.toggle('open');
-                    });
-                });
             }
         })
 });
